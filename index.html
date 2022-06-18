@@ -15,7 +15,28 @@
     </nav>
   </header>
   <div class="container">
-    <aside class="container__sidebar"></aside>
+    <aside class="container__sidebar">
+      <div class="card">
+        <div class="card__content">
+          <h2 class="card__title">Adding Book</h2>
+          <form id="addBook" action="">
+            <div class="form__control">
+              <label for="title">Title</label>
+              <input id="title" type="text">
+            </div>
+            <div class="form__control">
+              <label for="author">Author</label>
+              <input id="author" type="text">
+            </div>
+            <div class="form__control">
+              <label for="years">Years</label>
+              <input id="years" type="date">
+            </div>
+            <button class="btn btn-primary btn-block" type="submit">Save</button>
+          </form>
+        </div>
+      </div>
+    </aside>
     <main class="container__main"></main>
   </div>
 </body>

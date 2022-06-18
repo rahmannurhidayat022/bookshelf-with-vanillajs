@@ -1,3 +1,55 @@
+:root {
+  --color-1: #354259;
+  --color-2: #CDC2AE;
+  --color-3: #ECE5C7;
+  --color-4: #C2DED1;
+}
+
 html, body, * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--color-3);
+  font-family: sans-serif;
+}
+
+.container {
+  display: flex;
+}
+
+.container__sidebar {
+  background-color: var(--color-2);
+  padding: 30px 35px;
+  width: 30%;
+  height: 100vh;
+}
+
+.container__main {
+  flex: 1;
+  overflow: auto;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-1);
+  padding: 20px 0;
+}
+
+@media only screen and (max-width: 816px)  {
+  .container {
+    display: block;
+    padding: 30px 20px;
+  }
+
+  .container__sidebar {
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    height: max-content;
+  }
 }

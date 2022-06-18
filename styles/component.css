@@ -1,0 +1,66 @@
+.brand {
+  font-size: 32px;
+  color: var(--color-2)
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card__cover {
+    height: 150px;
+    width: 100%;
+}
+
+.card__content {
+    flex: 1;
+}
+
+.card__title {
+  color: var(--color-1);
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 15px 25px;
+  color: var(--color-1);
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.btn-primary {
+  background-color: var(--color-4);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+form .form__control {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+}
+
+form .form__control label {
+  font-size: 16px;
+  color: var(--color-1);
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+form .form__control input {
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+form .form__control input:focus {
+  outline-color: var(--color-4);
+}
