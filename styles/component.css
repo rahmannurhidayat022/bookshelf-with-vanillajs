@@ -8,6 +8,10 @@
     flex-direction: column;
 }
 
+.bordered {
+  border: 1px solid var(--color-2);
+}
+
 .card__cover {
     height: 150px;
     width: 100%;
@@ -29,14 +33,25 @@
   border-radius: 10px;
   font-size: 16px;
   font-weight: bold;
-  margin: 20px 0;
+  margin: 5px 0;
+  cursor: pointer;
 }
 
-.btn-primary {
+.btn__primary {
   background-color: var(--color-4);
 }
 
-.btn-block {
+.btn__info {
+  background-color: cornflowerblue;
+  color: #fff;
+}
+
+.btn__danger {
+  background-color: brown;
+  color: #fff;
+}
+
+.btn__block {
   width: 100%;
 }
 
@@ -44,6 +59,22 @@ form .form__control {
   display: flex;
   flex-direction: column;
   margin: 15px 0;
+}
+
+form .form__control input[type=checkbox] {
+  width: 20px;
+  border-radius: 50px;
+}
+
+form .form__control .custom__checkbox {
+  display: flex;
+  direction: row;
+  align-items: center;
+}
+
+form .form__control .custom__checkbox label {
+  padding-left: 10px;
+  color: #354259cf;
 }
 
 form .form__control label {

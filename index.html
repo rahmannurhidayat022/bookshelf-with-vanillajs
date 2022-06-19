@@ -22,22 +22,51 @@
           <form id="addBook" action="">
             <div class="form__control">
               <label for="title">Title</label>
-              <input id="title" type="text">
+              <input id="title" type="text" placeholder="click here">
             </div>
             <div class="form__control">
               <label for="author">Author</label>
-              <input id="author" type="text">
+              <input id="author" type="text" placeholder="click here">
             </div>
             <div class="form__control">
               <label for="years">Years</label>
               <input id="years" type="date">
             </div>
-            <button class="btn btn-primary btn-block" type="submit">Save</button>
+            <div class="form__control">
+              <label for="isComplete">Complete Read</label>
+              <div class="custom__checkbox">
+                <input type="checkbox" name="isComplete" id="isComplete">
+                <label>Yes, the book has been read</label>
+              </div>
+            </div>
+            <button class="btn btn__primary btn__block" type="submit">Save</button>
           </form>
         </div>
       </div>
     </aside>
-    <main class="container__main"></main>
+    <main class="container__main">
+      <div class="card">
+        <div class="card__content">
+          <h2 class="card__title">Finished Books</h2>
+          <div class="shelf">
+            <div class="shelf__item">
+              <h3 class="shelf__title">Membaca memperluas peluang bisnis</h3>
+              <h4 class="shelf__subtitle">Author Rahman Nurhidayat</h4>
+              <h4 class="shelf__subtitle">Years: 2001</h4>
+              <div class="btn__group">
+                <button class="btn btn__info">Completed</button>
+                <button class="btn btn__danger">Remove</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__content">
+          <h2 class="card__title">Unread Books</h2>
+        </div>
+      </div>
+    </main>
   </div>
 </body>
 </html>
