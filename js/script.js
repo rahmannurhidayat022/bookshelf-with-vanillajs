@@ -1,11 +1,3 @@
-// {
-//   id: string | number,
-//   title: string,
-//   author: string,
-//   year: number,
-//   isComplete: boolean,
-// }
-
 const books = [];
 const RENDER_EVENT = 'render-books';
 const SAVED_EVENT = 'saved-book';
@@ -98,10 +90,24 @@ function deleteBook(bookId) {
   saveDataToLocalStorage();
 }
 
+const searchKeyword = () => {
+  let input = document.getElementById('keyword').value;
+  input = input.toLowerCase();
+  let x = document.getElementsByClassName('shelf__item');
+  for (let i = 0; i < x.length; i++) {
+    if (!x[i].innerHTML.toLowerCase().includes(input)) {
+        x[i].style.display="none";
+    }
+    else {
+        x[i].style.display="block";                 
+    }
+  }
+}
+
 const renderTemplate = (book) => {
   return `
   <div key="${book.id}" class="shelf__item">
-    <h3 class="shelf__title">${book.title}</h3>
+    <h3 class="shelf__title title__book">${book.title}</h3>
     <h4 class="shelf__subtitle">Author ${book.author}</h4>
     <h4 class="shelf__subtitle">Year: ${book.year}</h4>
     <div class="btn__group">
