@@ -18,13 +18,14 @@ body {
 
 .container {
   display: flex;
+  height: 100vh;
 }
 
 .container__sidebar {
   background-color: var(--color-2);
   padding: 30px 35px;
   width: 30%;
-  height: 100vh;
+  height: 100%;
 }
 
 .container__main {
@@ -44,12 +45,13 @@ body {
 .shelf {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 .shelf .shelf__item {
   padding: 20px 10px;
   border: 1px solid var(--color-2);
   border-radius: 5px;
-  margin: 0 10px;
+  margin: 10px 10px;
 }
 .shelf .shelf__item .shelf__title {
   font-size: 20px;
@@ -95,7 +97,7 @@ body {
     padding: 20px 10px;
     border: 1px solid var(--color-3);
     border-radius: 5px;
-    margin: 0;
+    margin: 10px 0;
   }
   .shelf .shelf__item .shelf__title {
     font-size: 20px;

@@ -68,7 +68,8 @@ const loadDataFromStorage = () => {
 const addBook = () => {
   const title = document.getElementById('title').value;
   const author = document.getElementById('author').value;
-  const year = document.getElementById('year').value;
+  const yearStr = document.getElementById('year').value;
+  const year = parseInt(yearStr);
   const isComplete = document.getElementById('isComplete').checked;
   const id = generateId();
   const obj = generateBooktoObject(id, title, author, year, isComplete);
@@ -102,7 +103,7 @@ const renderTemplate = (book) => {
   <div key="${book.id}" class="shelf__item">
     <h3 class="shelf__title">${book.title}</h3>
     <h4 class="shelf__subtitle">Author ${book.author}</h4>
-    <h4 class="shelf__subtitle">Years: ${book.year}</h4>
+    <h4 class="shelf__subtitle">Year: ${book.year}</h4>
     <div class="btn__group">
       <button onclick="changeIsComplete(${book.id})" class="btn btn__info">${book.isComplete === true ? 'to unread shelf' : 'to completed shelf'}</button>
       <button onclick="deleteBook(${book.id})" class="btn btn__danger">Remove</button>
