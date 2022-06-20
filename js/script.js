@@ -77,6 +77,26 @@ const addBook = () => {
   saveDataToLocalStorage();
 }
 
+const changeIsComplete = (bookId) => {
+  const book = findBook(bookId);
+  
+  if (book === null) return;
+
+  book.isComplete = !book.isComplete;
+  document.dispatchEvent(new Event(RENDER_EVENT));
+  saveDataToLocalStorage();
+}
+
+function deleteBook(bookId) {
+  const book = findBookbyIndex(bookId);
+
+  if (book === -1) return;
+
+  books.splice(book, 1);
+  document.dispatchEvent(new Event(RENDER_EVENT));
+  saveDataToLocalStorage();
+}
+
 const renderTemplate = (book) => {
   return `
   <div key="${book.id}" class="shelf__item">
@@ -84,8 +104,8 @@ const renderTemplate = (book) => {
     <h4 class="shelf__subtitle">Author ${book.author}</h4>
     <h4 class="shelf__subtitle">Years: ${book.year}</h4>
     <div class="btn__group">
-      <button class="btn btn__info">${book.isComplete === true ? 'to unread shelf' : 'to completed shelf'}</button>
-      <button class="btn btn__danger">Remove</button>
+      <button onclick="changeIsComplete(${book.id})" class="btn btn__info">${book.isComplete === true ? 'to unread shelf' : 'to completed shelf'}</button>
+      <button onclick="deleteBook(${book.id})" class="btn btn__danger">Remove</button>
     </div>
   </div>
   `;
@@ -109,7 +129,6 @@ document.addEventListener(SAVED_EVENT, () => {
 document.addEventListener(RENDER_EVENT, function () {
   const completedShelfElmnt = document.getElementById('completedShelf');
   const unreadShelfElmnt = document.getElementById('unreadShelf');
-  console.log(completedShelfElmnt, unreadShelfElmnt)
   let completedShelf = '';
   let unreadShelf = '';
   for (book of books) {
