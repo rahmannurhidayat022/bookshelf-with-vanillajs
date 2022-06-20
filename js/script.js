@@ -104,9 +104,20 @@ const searchKeyword = () => {
   }
 }
 
-const showModal = () => {
+const deleteBookAndCloseModal = (bookId) => {
+  deleteBook(bookId);
   const modalElmnt = document.getElementById('modal');
   const mainElmnt = document.getElementById('main');
+  modalElmnt.classList.remove('active');
+  mainElmnt.classList.remove('blur');
+}
+
+const showModal = (e) => {
+  const bookId = e.getAttribute('data-id');
+  const modalElmnt = document.getElementById('modal');
+  const mainElmnt = document.getElementById('main');
+  const btnRemoveInModal = document.getElementById('remove-book');
+  btnRemoveInModal.setAttribute('onclick', `deleteBookAndCloseModal(${bookId})`);
   modalElmnt.classList.add('active')
   mainElmnt.classList.add('blur');
 }
@@ -126,7 +137,7 @@ const renderTemplate = (book) => {
     <h4 class="shelf__subtitle">Year: ${book.year}</h4>
     <div class="btn__group">
       <button onclick="changeIsComplete(${book.id})" class="btn btn__info">${book.isComplete === true ? 'to unread shelf' : 'to completed shelf'}</button>
-      <button onclick="showModal()" class="btn btn__danger">Remove</button>
+      <button data-id="${book.id}" onclick="showModal(this)" class="btn btn__danger">Remove</button>
     </div>
   </div>
   `;
