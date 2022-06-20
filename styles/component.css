@@ -115,6 +115,37 @@ form .form__control input:focus {
   outline-color: var(--color-4);
 }
 
+.modal {
+  z-index: 999;
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #3542599b;
+  justify-content: center;
+  align-items: center;
+}
+.modal .modal__dialog {
+  background-color: #fff;
+  width: 400px;
+  padding: 40px 30px;
+  border-radius: 10px;
+}
+.modal .modal__content {
+  font-size: 18px;
+  font-weight: bold;
+}
+.modal .modal__footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+.modal.active {
+  display: flex;
+}
+
 @media only screen and (max-width: 816px)  {
   .card {
     margin: 10px 0;
@@ -138,5 +169,35 @@ form .form__control input:focus {
   }
   .search__bar button {
     width: 100%;
+  }
+  .modal {
+    z-index: 999;
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #3542599b;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal .modal__dialog {
+    background-color: #fff;
+    width: 400px;
+    padding: 40px 30px;
+    border-radius: 10px;
+  }
+  .modal .modal__content {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .modal .modal__footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+  .modal.active {
+    display: flex;
   }
 }

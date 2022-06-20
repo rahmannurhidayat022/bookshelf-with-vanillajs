@@ -21,6 +21,10 @@ body {
   height: 100vh;
 }
 
+.blur {
+  filter: blur(1.5px);
+}
+
 .container__sidebar {
   background-color: var(--color-2);
   padding: 30px 35px;

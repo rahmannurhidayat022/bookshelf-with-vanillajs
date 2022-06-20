@@ -104,6 +104,20 @@ const searchKeyword = () => {
   }
 }
 
+const showModal = () => {
+  const modalElmnt = document.getElementById('modal');
+  const mainElmnt = document.getElementById('main');
+  modalElmnt.classList.add('active')
+  mainElmnt.classList.add('blur');
+}
+
+const closeModal = () => {
+  const modalElmnt = document.getElementById('modal');
+  const mainElmnt = document.getElementById('main');
+  modalElmnt.classList.remove('active');
+  mainElmnt.classList.remove('blur');
+}
+
 const renderTemplate = (book) => {
   return `
   <div key="${book.id}" class="shelf__item">
@@ -112,7 +126,7 @@ const renderTemplate = (book) => {
     <h4 class="shelf__subtitle">Year: ${book.year}</h4>
     <div class="btn__group">
       <button onclick="changeIsComplete(${book.id})" class="btn btn__info">${book.isComplete === true ? 'to unread shelf' : 'to completed shelf'}</button>
-      <button onclick="deleteBook(${book.id})" class="btn btn__danger">Remove</button>
+      <button onclick="showModal()" class="btn btn__danger">Remove</button>
     </div>
   </div>
   `;
