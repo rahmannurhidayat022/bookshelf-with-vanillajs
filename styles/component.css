@@ -95,3 +95,48 @@ form .form__control input {
 form .form__control input:focus {
   outline-color: var(--color-4);
 }
+
+.search__bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.search__bar input[type=text] {
+  display: block;
+  height: 45px;
+  width: 300px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+.search__bar input[type=text]:focus {
+  outline-color: var(--color-4);
+}
+
+@media only screen and (max-width: 816px)  {
+  .card {
+    margin: 10px 0;
+  }
+  .search__bar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .search__bar input[type=text] {
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+    width: 100%;
+    margin: 10px 0;
+  }
+  .search__bar input[type=text]:focus {
+    outline-color: var(--color-4);
+  }
+  .search__bar button {
+    width: 100%;
+  }
+}
