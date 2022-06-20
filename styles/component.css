@@ -146,6 +146,23 @@ form .form__control input:focus {
   display: flex;
 }
 
+.notif {
+  display: none;
+  position: fixed;
+  right: 30px;
+  bottom: 50px;
+  padding: 20px 30px;
+  border-radius: 10px;
+  color: var(--color-1);
+  border: 1px solid var(--color-1);
+}
+.notif.active {
+  display: block;
+}
+.notif.notif__success {
+  background-color: var(--color-4);
+}
+
 @media only screen and (max-width: 816px)  {
   .card {
     margin: 10px 0;

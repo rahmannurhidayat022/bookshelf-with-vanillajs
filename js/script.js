@@ -57,6 +57,14 @@ const loadDataFromStorage = () => {
   document.dispatchEvent(new Event(RENDER_EVENT));
 }
 
+const notificationActive = () => {
+  const notifElmnt = document.getElementById('notification');
+  notifElmnt.classList.add('active');
+  setTimeout(function() {
+    notifElmnt.classList.remove('active');
+  }, 5000);
+}
+
 const addBook = () => {
   const title = document.getElementById('title').value;
   const author = document.getElementById('author').value;
@@ -68,6 +76,7 @@ const addBook = () => {
   books.push(obj);
   document.dispatchEvent(new Event(RENDER_EVENT));
   saveDataToLocalStorage();
+  notificationActive();
 }
 
 const changeIsComplete = (bookId) => {
